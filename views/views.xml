@@ -75,6 +75,9 @@
     
     <menuitem name="Payment" id="payment_menu" parent="menu_payment_header"
               action="payment_my_action_window"/>
+	
+    <menuitem name="Account Type" id="account_type_list" parent="menu_payment_header"
+              action="payment_my.account_type_window"/>
     <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
               action="payment_my.action_server"/>
     -->
