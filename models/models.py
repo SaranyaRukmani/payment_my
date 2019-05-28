@@ -24,3 +24,10 @@ class AccountType(models.Model):
 	Id = fields.Integer()
 	Code = fields.Integer()
 	Description = fields.Char()
+	
+class payment_my(models.Model):
+	_name = 'payment_my.bank'
+
+	id = fields.Integer()	
+	code = fields.Integer()
+	description = fields.Char()

@@ -25,6 +25,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/account_type_view.xml',
+		'views/bank_views.xml',
 		'views/views.xml',
 		
         'views/templates.xml',
