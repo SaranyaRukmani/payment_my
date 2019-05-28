@@ -5,9 +5,9 @@ from odoo import models, fields, api
 class payment_my(models.Model):
      _name = 'payment_my.payment_my'
 
-     id = fields.Integer()
-     is_active = fields.Integer()
-     create_date = fields.Integer()
+     ac_id = fields.Integer()
+     is_active = fields.Boolean(string='Active', default=True)
+     create_date = fields.Date(string="Date")
      description = fields.Char()
 #	 acty=f.man
 
@@ -17,3 +17,9 @@ class payment_my(models.Model):
 #     @api.depends('value')
 #     def _value_pc(self):
 #         self.value2 = float(self.value) / 100
+class card_provider(models.Model):
+     _name = 'payment_my.card_provider'
+
+     id = fields.Integer()
+     code = fields.Integer()
+     description = fields.Char()
