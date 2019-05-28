@@ -1,0 +1,82 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="payment_my_list">
+      <field name="name">Payment_my list</field>
+      <field name="model">payment_my.payment_my</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="is_active"/>
+          <field name="create_date"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    
+	<record id="payment_my_form" model="ir.ui.view">
+		<field name="name">Payment_my form</field>
+		<field name="model">payment_my.payment_my</field>
+		<field name="arch" type="xml">
+		<form>
+			<sheet>
+				<group col="2" string="Details">
+					<group>
+						<field name="id"/>
+						<field name="is_active"/>
+						<field name="create_date"/>
+						<field name="description"/>
+					</group>
+				</group>
+			</sheet>
+		</form>
+		</field>
+	</record>
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="payment_my_action_window">
+      <field name="name">Payment_my window</field>
+      <field name="res_model">payment_my.payment_my</field>
+	  <field name="view_ids" eval="[(5, 0, 0), 
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('payment_my_list')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('payment_my_form')})
+		]"/>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="payment_my.action_server">
+      <field name="name">Payment_my server</field>
+      <field name="model_id" ref="model_payment_my_payment_my"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    
+    <menuitem name="Payment" id="menu_payment"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Payment" id="menu_payment_header" parent="menu_payment"/>
+ 
+    
+    <!-- actions -->
+    
+    <menuitem name="Payment" id="payment_menu" parent="menu_payment_header"
+              action="payment_my_action_window"/>
+    <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
+              action="payment_my.action_server"/>
+    -->
+  </data>
+</odoo>
