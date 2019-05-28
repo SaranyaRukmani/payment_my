@@ -26,12 +26,12 @@
         'security/ir.model.access.csv',
 
         'views/card_provider.xml',
-        'views/views.xml',
+
 
         'views/account_type_view.xml',
-		'views/bank_views.xml',
-		'views/views.xml',
-		
+        'views/bank_views.xml',
+        'views/views.xml',
+
 
         'views/templates.xml',
     ],
