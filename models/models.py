@@ -17,9 +17,26 @@ class payment_my(models.Model):
 #     @api.depends('value')
 #     def _value_pc(self):
 #         self.value2 = float(self.value) / 100
+
 class card_provider(models.Model):
      _name = 'payment_my.card_provider'
 
      id = fields.Integer()
      code = fields.Integer()
      description = fields.Char()
+
+
+class AccountType(models.Model):
+	_name = 'payment_my.account_type'
+
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Description = fields.Char()
+	
+class payment_my(models.Model):
+	_name = 'payment_my.bank'
+
+	id = fields.Integer()	
+	code = fields.Integer()
+	description = fields.Char()
+

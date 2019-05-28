@@ -74,9 +74,18 @@
     <!-- actions -->
     
     <menuitem name="Payment" id="payment_menu" parent="menu_payment_header"
+
               action="payment_my_action_window" sequence="1"/>
     <menuitem name="Card Provider" id="payment_card_provider" parent="menu_payment_header"
               action="card_provider_action_window" sequence="2"/>
+
+	
+    <menuitem name="Account Type" id="account_type_list" parent="menu_payment_header"
+              action="payment_my.account_type_window"/>
+			  
+	<menuitem name="bank" id="bank_list" parent="menu_payment_header"
+              action="payment_my_bank_window"/>
+
     <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
               action="payment_my.action_server"/>
     -->
