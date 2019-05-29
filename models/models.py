@@ -36,7 +36,40 @@ class AccountType(models.Model):
 class payment_my(models.Model):
 	_name = 'payment_my.bank'
 
-	id = fields.Integer()	
+	id = fields.Integer()
 	code = fields.Integer()
 	description = fields.Char()
+
+class Category(models.Model):
+	_name = 'payment_my.category'
+
+	id = fields.Integer()
+	code = fields.Integer()
+	description = fields.Char()
+
+class Customer(models.Model):
+	_inherit = 'res.partner' 
+
+	first_name = fields.Char(string="First Name")
+	middle_name = fields.Char(string="Middle Name")
+	last_name = fields.Char(string="Last Name")
+	dob = fields.Date(string="Date of birth")
+	is_active = fields.Boolean(string='Active', default=True)
+	create_date = fields.Date(string="Create Date")
+	customer_id = fields.Char(string="ID")
+
+
+class CreditCard(models.Model):
+	_name = 'payment_my.credit_card'
+
+	card_id = fields.Integer(string="ID")
+	customer_id = fields.Integer()
+	name_on_card = fields.Char()
+	card_no = fields.Integer()
+	expiry_date = fields.Date()
+	Issue_date = fields.Date()
+	card_type_id =fields.Integer()
+	card_provider_id = fields.Integer()
+	is_active = fields.Boolean(string="Active",default=True)
+	create_date = fields.Date()
 

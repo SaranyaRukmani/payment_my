@@ -1,0 +1,80 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="credit_card_list">
+      <field name="name">Credit Card list</field>
+      <field name="model">payment_my.credit_card</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="card_id"/>
+          <field name="customer_id"/>
+          <field name="name_on_card"/>
+          <field name="card_no"/>
+        </tree>
+      </field>
+    </record>
+    
+	<record id="credit_card_form" model="ir.ui.view">
+		<field name="name">Credit Card form</field>
+		<field name="model">payment_my.credit_card</field>
+		<field name="arch" type="xml">
+		<form>
+			<sheet>
+				<group col="2" string="Details">
+					<group>
+						<field name="card_id"/>
+						<field name="is_active"/>
+						<field name="create_date"/>
+						<field name="expiry_date"/>
+						<field name="Issue_date"/>
+						<field name="card_type_id"/>
+						<field name="card_provider_id"/>
+						<!--<field name="account_id"/>-->
+					</group>
+				</group>
+			</sheet>
+		</form>
+		</field>
+	</record>
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="credit_card_action_window">
+      <field name="name">Credit Card</field>
+      <field name="res_model">payment_my.credit_card</field>
+	  <field name="view_ids" eval="[(5, 0, 0), 
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('credit_card_list')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('credit_card_form')})
+		]"/>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="payment_my.action_server">
+      <field name="name">Payment_my server</field>
+      <field name="model_id" ref="model_payment_my_payment_my"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    
+ 
+    
+    <!-- actions -->
+    
+
+    <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
+              action="payment_my.action_server"/>
+    -->
+  </data>
+</odoo>

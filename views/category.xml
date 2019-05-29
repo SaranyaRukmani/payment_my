@@ -2,31 +2,29 @@
   <data>
     <!-- explicit list view definition -->
     
-    <record model="ir.ui.view" id="account_type_list">
-      <field name="name">AccountType list</field>
-      <field name="model">payment_my.account_type</field>
+    <record model="ir.ui.view" id="category_list">
+      <field name="name">Category list</field>
+      <field name="model">payment_my.category</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="Id"/>
-          <field name="Code"/>
-          <field name="Description"/>
-          
+          <field name="id"/>
+          <field name="code"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
     
-	<record id="account_type_form" model="ir.ui.view">
-		<field name="name">AccountType form</field>
-		<field name="model">payment_my.account_type</field>
+	<record id="category_form" model="ir.ui.view">
+		<field name="name">Category form</field>
+		<field name="model">payment_my.category</field>
 		<field name="arch" type="xml">
 		<form>
 			<sheet>
 				<group col="2" string="Details">
 					<group>
-						<field name="Id"/>
-						<field name="Code"/>
-						<field name="Description"/>
-						
+						<field name="id"/>
+						<field name="code"/>
+						<field name="description"/>
 					</group>
 				</group>
 			</sheet>
@@ -35,12 +33,12 @@
 	</record>
     <!-- actions opening views on models -->
     
-    <record model="ir.actions.act_window" id="payment_my.account_type_window">
-      <field name="name">account_type window</field>
-      <field name="res_model">payment_my.account_type</field>
+    <record model="ir.actions.act_window" id="category_action_window">
+      <field name="name">Category</field>
+      <field name="res_model">payment_my.category</field>
 	  <field name="view_ids" eval="[(5, 0, 0), 
-        (0, 0, {'view_mode': 'tree', 'view_id': ref('account_type_list')}),
-		(0, 0, {'view_mode': 'form', 'view_id': ref('account_type_form')})
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('category_list')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('category_form')})
 		]"/>
       <field name="view_mode">tree,form</field>
     </record>
@@ -62,9 +60,15 @@
     </record>
     -->
 
-  
-    <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
-              action="payment_my.action_server"/>-->
+    <!-- Top menu item -->
     
+ 
+    
+    <!-- actions -->
+    
+
+    <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
+              action="payment_my.action_server"/>
+    -->
   </data>
 </odoo>
