@@ -53,4 +53,12 @@ class Bankaccount(models.Model):
 	AuthorizationCode = fields.Integer()
 	IsActive = fields.Integer()
 	CreatedDate = fields.Date(String="Date")
+	
+
+class ContractType(models.Model):
+	_name = 'payment_my.contract_type'
+
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Description = fields.Char()
 
