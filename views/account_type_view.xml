@@ -24,7 +24,7 @@
 				<group col="2" string="Details">
 					<group>
 						<field name="Id"/>
-						<field name="Code"/>"/>
+						<field name="Code"/>
 						<field name="Description"/>
 						
 					</group>
