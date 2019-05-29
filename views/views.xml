@@ -85,6 +85,7 @@
 	<menuitem name="bank" id="bank_list" parent="menu_payment_header"
               action="payment_my_bank_window"/>
 
+
     <menuitem name="Category" id="category_provider" parent="menu_payment_header"
               action="category_action_window"/>
 
@@ -93,6 +94,13 @@
 
     <menuitem name="Credit Card" id="credit_card" parent="menu_payment_header"
               action="credit_card_action_window"/>
+
+	<menuitem name="Bank_account" id="bank_account_list" parent="menu_payment_header"
+              action="payment_my.bank_account_window"/>
+			  
+	<menuitem name="contract_type" id="contract_type_list" parent="menu_payment_header"
+              action="payment_my.contract_type_window"/>
+
     <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
               action="payment_my.action_server"/>
     -->
