@@ -160,5 +160,12 @@ class DevicePlatform(models.Model):
 	Id = fields.Integer()
 	Code = fields.Integer()
 	Description = fields.Char()
+	
+class EventType(models.Model):
+	_name = 'payment_my.even_type'
+
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Description = fields.Char()
 
 

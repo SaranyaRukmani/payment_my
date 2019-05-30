@@ -118,6 +118,9 @@
 	<menuitem name="DevicePlatform" id="device_platform_list" parent="menu_payment_header"
               action="payment_my.device_platform_window"/>
 			  
+	<menuitem name="EventType" id="even_type_list" parent="menu_payment_header"
+              action="payment_my.even_type_window"/>
+			  
 
     <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
               action="payment_my.action_server"/>
