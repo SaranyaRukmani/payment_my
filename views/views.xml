@@ -91,6 +91,9 @@
 
     <menuitem name="Customer" id="customer" parent="menu_payment_header"
               action="customer_action_window"/>
+			  
+	<menuitem name="customerbankaccount" id="customerbankaccount_list" parent="menu_payment_header"
+              action="customerbankaccount_window"/>
 
     <menuitem name="Credit Card" id="credit_card" parent="menu_payment_header"
               action="credit_card_action_window"/>

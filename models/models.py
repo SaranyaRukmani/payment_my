@@ -87,6 +87,12 @@ class Customer(models.Model):
 	create_date = fields.Date(string="Create Date")
 	customer_id = fields.Char(string="ID")
 
+class CustomerBankAccount(models.Model):
+	_name = 'payment_my.customerbankaccount'
+
+	id = fields.Integer()	
+	customer_id = fields.Integer()
+	bank_account_id = fields.Integer()
 
 class CreditCard(models.Model):
 	_name = 'payment_my.credit_card'

@@ -32,6 +32,7 @@
         'views/bank_views.xml',
 		'views/bank_account_view.xml',
 		'views/contract_type_view.xml',
+		'views/customer_bank_account.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
