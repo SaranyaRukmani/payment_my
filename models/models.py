@@ -61,4 +61,11 @@ class ContractType(models.Model):
 	Id = fields.Integer()
 	Code = fields.Integer()
 	Description = fields.Char()
+	
+class Country(models.Model):
+	_name = 'payment_my.country'
+
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Country = fields.Char()
 
