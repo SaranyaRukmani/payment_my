@@ -1,0 +1,44 @@
+<odoo>
+  <data>
+	<record model="ir.ui.view" id="cardtype_list">
+      <field name="name">cardtype list</field>
+      <field name="model">payment_my.cardtype</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="code"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    
+	<record id="cardtype_form" model="ir.ui.view">
+		<field name="name">cardtype.form</field>
+		<field name="model">payment_my.cardtype</field>
+		<field name="arch" type="xml">
+		<form>
+			<sheet>
+				<group col="2" string="Details">
+					<group>
+						<field name="id"/>
+						<field name="code"/>
+						<field name="description"/>
+					</group>
+				</group>
+			</sheet>
+		</form>
+		</field>
+	</record>
+    <!-- actions opening views on models -->
+    
+	<record model="ir.actions.act_window" id="cardtype_window">
+      <field name="name">Payment.cardtype window</field>
+      <field name="res_model">payment_my.cardtype</field>
+	  <field name="view_ids" eval="[(5, 0, 0), 
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('cardtype_list')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('cardtype_form')})
+		]"/>
+      <field name="view_mode">tree,form</field>
+	</record>
+  </data>
+</odoo>
