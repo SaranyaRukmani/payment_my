@@ -97,6 +97,8 @@
 
     <menuitem name="Credit Card" id="credit_card" parent="menu_payment_header"
               action="credit_card_action_window"/>
+	<menuitem name="cardtype" id="cardtype_list" parent="menu_payment_header"
+              action="cardtype_window"/>
 
 	<menuitem name="Bank_account" id="bank_account_list" parent="menu_payment_header"
               action="payment_my.bank_account_window"/>

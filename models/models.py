@@ -25,7 +25,12 @@ class card_provider(models.Model):
      id = fields.Integer()
      code = fields.Integer()
      description = fields.Char()
+class cardtype(models.Model):
+	_name = 'payment_my.cardtype'
 
+	id = fields.Integer()	
+	code = fields.Integer()
+	description = fields.Char()
 
 class AccountType(models.Model):
 	_name = 'payment_my.account_type'
