@@ -33,6 +33,7 @@
 		'views/bank_account_view.xml',
 		'views/contract_type_view.xml',
 		'views/customer_device_view.xml',
+		'views/device_view.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
