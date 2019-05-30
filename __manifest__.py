@@ -24,17 +24,15 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-
+        'views/credit_card.xml',
+        'views/customer.xml',
+        'views/category.xml',
         'views/card_provider.xml',
-
-
         'views/account_type_view.xml',
         'views/bank_views.xml',
 		'views/bank_account_view.xml',
 		'views/contract_type_view.xml',
         'views/views.xml',
-
-
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
