@@ -121,6 +121,9 @@
 	<menuitem name="EventType" id="even_type_list" parent="menu_payment_header"
               action="payment_my.even_type_window"/>
 			  
+	<menuitem name="InvoiceStatus" id="invoice_status_list" parent="menu_payment_header"
+              action="payment_my.invoice_status_window"/>
+			  
 	<menuitem name="Invoice" id="invoice_list" parent="menu_payment_header"
               action="payment_my.invoice_window"/>
 			  

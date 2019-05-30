@@ -17,3 +17,4 @@ access_payment_my_device_payment_type,payment_my.device_payment_type,model_payme
 access_payment_my_device_platform,payment_my.device_platform,model_payment_my_device_platform,base.group_partner_manager,1,1,1,0
 access_payment_my_even_type,payment_my.even_type,model_payment_my_even_type,base.group_partner_manager,1,1,1,0
 access_payment_my_invoice,payment_my.invoice,model_payment_my_invoice,base.group_partner_manager,1,1,1,0
+access_payment_my_invoice_status,payment_my.invoice_status,model_payment_my_invoice_status,base.group_partner_manager,1,1,1,0

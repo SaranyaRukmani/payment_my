@@ -80,6 +80,8 @@ class Category(models.Model):
 	id = fields.Integer()
 	code = fields.Integer()
 	description = fields.Char()
+	
+	invoice_ids=fields.One2many('payment_my.invoice', 'category_id', string="Invoice")
 
 class Customer(models.Model):
 	_inherit = 'res.partner' 
@@ -186,5 +188,12 @@ class Invoice(models.Model):
 	Description = fields.Char()
 	StatusId = fields.Integer()
 	CreatedDateStamp = fields.Date(String="Date")
+	
+	category_id=fields.Many2one('payment_my.category', string="Category")
 
+class InvoiceStatus(models.Model):
+	_name = 'payment_my.invoice_status'
 
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Description = fields.Char()

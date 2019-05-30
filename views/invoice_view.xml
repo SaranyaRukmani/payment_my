@@ -32,27 +32,26 @@
 		<field name="arch" type="xml">
 		<form>
 			<sheet>
-				<group col="3" string="Details">
+				<group col="2" string="Details">
 					<group>
-          <field name="Id"/>
-          <field name="InvoiceCode"/>
-          <field name="MerchantId"/>
-		  <field name="CategoryId"/>
-		  <field name="MerchantInvoiceReference"/>
-		  <field name="Amount"/>
-		  
-		  
+						<field name="Id"/>
+						<field name="InvoiceCode"/>
+						<field name="MerchantId"/>
+						<field name="CategoryId"/>
+						<field name="MerchantInvoiceReference"/>
+						<field name="Amount"/>
+						<field name="category_id"/>
+		  			</group>
+					<group>
+						<field name="CreatedBy"/>
+						<field name="MerchantDeviceId"/>
+						<field name="CreatedDate"/>
+						<field name="ExpiryDate"/>
+						<field name="CustomerId"/>
+						<field name="Description"/>
+						<field name="StatusId"/>
+						<field name="CreatedDateStamp"/>
 					</group>
-				</group>
-				<group>
-				<field name="CreatedBy"/>
-				<field name="MerchantDeviceId"/>
-		  <field name="CreatedDate"/>
-		  <field name="ExpiryDate"/>
-		  <field name="CustomerId"/>
-		  <field name="Description"/>
-		  <field name="StatusId"/>
-		  <field name="CreatedDateStamp"/>
 				</group>
 			</sheet>
 		</form>
