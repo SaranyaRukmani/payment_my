@@ -36,7 +36,15 @@
 		'views/customer_bank_account.xml',
 
 		'views/customer_device_view.xml',
+
 		'views/cardtype.xml',
+
+
+		'views/device_view.xml',
+
+
+
+
         'views/views.xml',
         'views/templates.xml',
     ],

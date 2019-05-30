@@ -56,7 +56,7 @@ class Bankaccount(models.Model):
 	IBANCode = fields.Integer()
 	BankId = fields.Integer()
 	AuthorizationCode = fields.Integer()
-	IsActive = fields.Integer()
+	IsActive = fields.Boolean(string="Active",default=True)
 	CreatedDate = fields.Date(String="Date")
 	
 
@@ -122,10 +122,26 @@ class CustomerDevice(models.Model):
 	DeviceId = fields.Integer()
 	MobileNumber= fields.Integer()
 	PaymentTypeId = fields.Integer()
-	IsActive = fields.Integer()
+	IsActive = fields.Boolean(string="Active",default=True)
 	CreatedDate = fields.Date(String="Date")
 #	customer_id=one2many(customer_device)
 #	device=one2many(customer_device)
 #	paymentid=one2many(customer_device)
+
+class Device(models.Model):
+	_name = 'payment_my.device'
+
+	Id = fields.Integer()
+	DeviceCode = fields.Integer()
+	PlatformTypeId = fields.Integer()
+	PlatformVersion= fields.Integer()
+	IsCameraEnabled = fields.Boolean(string="Active",default=True)
+	IsCameraCanReadQRCode = fields.Boolean(string="Active",default=True)
+	IsNFCOpen = fields.Boolean(string="Active",default=True)
+	AppVersion = fields.Char()
+	ApiKey = fields.Integer()
+	ApiSecret = fields.Integer()
+	CreatedDate = fields.Date(String="Date")
+	HashCode = fields.Date(String="Date")
 
 

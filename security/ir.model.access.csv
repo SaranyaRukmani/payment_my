@@ -11,4 +11,7 @@ access_payment_my_contract_type,payment_my.contract_type,model_payment_my_contra
 access_payment_my_country,payment_my.country,model_payment_my_country,base.group_partner_manager,1,1,1,0
 access_payment_my_customerbankaccount,payment_my.customerbankaccount,model_payment_my_customerbankaccount,base.group_partner_manager,1,1,1,0
 access_payment_my_customer_device,payment_my.customer_device,model_payment_my_customer_device,base.group_partner_manager,1,1,1,0
+,,,,,,,
 access_payment_my_cardtype,payment_my.cardtype,model_payment_my_cardtype,base.group_partner_manager,1,1,1,0
+,,,,,,,
+access_payment_my_device,payment_my.device,model_payment_my_device,base.group_partner_manager,1,1,1,0
