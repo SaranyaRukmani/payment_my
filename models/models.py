@@ -88,6 +88,12 @@ class Customer(models.Model):
 	customer_id = fields.Char(string="ID")
 #	cou_id=one2many(country)
 
+class CustomerBankAccount(models.Model):
+	_name = 'payment_my.customerbankaccount'
+
+	id = fields.Integer()	
+	customer_id = fields.Integer()
+	bank_account_id = fields.Integer()
 
 class CreditCard(models.Model):
 	_name = 'payment_my.credit_card'
