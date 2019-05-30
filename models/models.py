@@ -167,5 +167,24 @@ class EventType(models.Model):
 	Id = fields.Integer()
 	Code = fields.Integer()
 	Description = fields.Char()
+	
+	
+class Invoice(models.Model):
+	_name = 'payment_my.invoice'
+
+	Id = fields.Integer()
+	InvoiceCode = fields.Integer()
+	MerchantId = fields.Integer()
+	CategoryId= fields.Integer()
+	MerchantInvoiceReference = fields.Char()
+	Amount = fields.Integer()
+	CreatedBy = fields.Char()
+	MerchantDeviceId = fields.Integer()
+	CreatedDate = fields.Date(String="Date")
+	ExpiryDate = fields.Date(String="Date")
+	CustomerId = fields.Integer()
+	Description = fields.Char()
+	StatusId = fields.Integer()
+	CreatedDateStamp = fields.Date(String="Date")
 
 
