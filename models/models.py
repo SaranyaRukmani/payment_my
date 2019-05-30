@@ -86,6 +86,7 @@ class Customer(models.Model):
 	is_active = fields.Boolean(string='Active', default=True)
 	create_date = fields.Date(string="Create Date")
 	customer_id = fields.Char(string="ID")
+#	cou_id=one2many(country)
 
 class CustomerBankAccount(models.Model):
 	_name = 'payment_my.customerbankaccount'
@@ -107,4 +108,19 @@ class CreditCard(models.Model):
 	card_provider_id = fields.Integer()
 	is_active = fields.Boolean(string="Active",default=True)
 	create_date = fields.Date()
+	
+class CustomerDevice(models.Model):
+	_name = 'payment_my.customer_device'
+
+	Id = fields.Integer()
+	CustomerId = fields.Integer()
+	DeviceId = fields.Integer()
+	MobileNumber= fields.Integer()
+	PaymentTypeId = fields.Integer()
+	IsActive = fields.Integer()
+	CreatedDate = fields.Date(String="Date")
+#	customer_id=one2many(customer_device)
+#	device=one2many(customer_device)
+#	paymentid=one2many(customer_device)
+
 
