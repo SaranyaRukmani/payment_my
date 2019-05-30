@@ -137,6 +137,13 @@ class Device(models.Model):
 	ApiKey = fields.Integer()
 	ApiSecret = fields.Integer()
 	CreatedDate = fields.Date(String="Date")
-	HashCode = fields.Date(String="Date")
+	HashCode = fields.Integer()
+	
+class DevicePaymentType(models.Model):
+	_name = 'payment_my.device_payment_type'
+
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Description = fields.Char()
 
 
