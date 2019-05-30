@@ -48,6 +48,9 @@
 		  
 					</group>
 				</group>
+				<group>
+				<field name="customer_device_ids"/>
+				</group>
 			</sheet>
 		</form>
 		</field>

@@ -42,6 +42,7 @@
 
 		'views/device_view.xml',
 		'views/device_payment_type_view.xml',
+		'views/device_platform_view.xml',
 
 
 

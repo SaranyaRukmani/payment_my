@@ -125,8 +125,8 @@ class CustomerDevice(models.Model):
 	IsActive = fields.Boolean(string="Active",default=True)
 	CreatedDate = fields.Date(String="Date")
 #	customer_id=one2many(customer_device)
-#	device=one2many(customer_device)
-#	paymentid=one2many(customer_device)
+	device_id=fields.Many2one('payment_my.device', string="Device")
+	payment_id=fields.Many2one('payment_my.device_payment_type', string="DevicePaymentType")
 
 class Device(models.Model):
 	_name = 'payment_my.device'
@@ -144,8 +144,18 @@ class Device(models.Model):
 	CreatedDate = fields.Date(String="Date")
 	HashCode = fields.Integer()
 	
+	customer_device_ids = fields.One2many('payment_my.customer_device', 'device_id', string="customer_device")
+	
 class DevicePaymentType(models.Model):
 	_name = 'payment_my.device_payment_type'
+
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Description = fields.Char()
+	device_payment_type_ids = fields.One2many('payment_my.customer_device', 'payment_id', string="customer_device")
+	
+class DevicePlatform(models.Model):
+	_name = 'payment_my.device_platform'
 
 	Id = fields.Integer()
 	Code = fields.Integer()

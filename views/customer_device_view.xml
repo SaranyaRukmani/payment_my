@@ -33,7 +33,8 @@
           <field name="DeviceId"/>
 		  <field name="MobileNumber"/>
 		  <field name="PaymentTypeId"/>
-		  
+		  <field name="device_id"/>
+		  <field name="payment_id"/>
 		  <field name="IsActive"/>
 		  <field name="CreatedDate"/>
 		  
