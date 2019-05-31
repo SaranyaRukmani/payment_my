@@ -2,30 +2,31 @@
   <data>
     <!-- explicit list view definition -->
     
-    <record model="ir.ui.view" id="category_list">
-      <field name="name">Category list</field>
-      <field name="model">payment_my.category</field>
+    <record model="ir.ui.view" id="invoice_status_list">
+      <field name="name">InvoiceStatus list</field>
+      <field name="model">payment_my.invoice_status</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="id"/>
-          <field name="code"/>
-          <field name="description"/>
+          <field name="Id"/>
+          <field name="Code"/>
+          <field name="Description"/>
+          
         </tree>
       </field>
     </record>
     
-	<record id="category_form" model="ir.ui.view">
-		<field name="name">Category form</field>
-		<field name="model">payment_my.category</field>
+	<record id="invoice_status_form" model="ir.ui.view">
+		<field name="name">InvoiceStatus form</field>
+		<field name="model">payment_my.invoice_status</field>
 		<field name="arch" type="xml">
 		<form>
 			<sheet>
 				<group col="2" string="Details">
 					<group>
-						<field name="id"/>
-						<field name="code"/>
-						<field name="description"/>
-						<field name="invoice_ids"/>
+						<field name="Id"/>
+						<field name="Code"/>
+						<field name="Description"/>
+						
 					</group>
 				</group>
 			</sheet>
@@ -34,12 +35,12 @@
 	</record>
     <!-- actions opening views on models -->
     
-    <record model="ir.actions.act_window" id="category_action_window">
-      <field name="name">Category</field>
-      <field name="res_model">payment_my.category</field>
+    <record model="ir.actions.act_window" id="payment_my.invoice_status_window">
+      <field name="name">InvoiceStatus window</field>
+      <field name="res_model">payment_my.invoice_status</field>
 	  <field name="view_ids" eval="[(5, 0, 0), 
-        (0, 0, {'view_mode': 'tree', 'view_id': ref('category_list')}),
-		(0, 0, {'view_mode': 'form', 'view_id': ref('category_form')})
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('invoice_status_list')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('invoice_status_form')})
 		]"/>
       <field name="view_mode">tree,form</field>
     </record>
@@ -61,15 +62,9 @@
     </record>
     -->
 
-    <!-- Top menu item -->
-    
- 
-    
-    <!-- actions -->
-    
-
+  
     <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
-              action="payment_my.action_server"/>
-    -->
+              action="payment_my.action_server"/>-->
+    
   </data>
 </odoo>

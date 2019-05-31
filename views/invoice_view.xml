@@ -2,42 +2,55 @@
   <data>
     <!-- explicit list view definition -->
     
-    <record model="ir.ui.view" id="customer_device_list">
-      <field name="name">CustomerDevice list</field>
-      <field name="model">payment_my.customer_device</field>
+    <record model="ir.ui.view" id="invoice_list">
+      <field name="name">Invoice list</field>
+      <field name="model">payment_my.invoice</field>
       <field name="arch" type="xml">
         <tree>
           <field name="Id"/>
-          <field name="CustomerId"/>
-          <field name="DeviceId"/>
-		  <field name="MobileNumber"/>
-		  <field name="PaymentTypeId"/>
+          <field name="InvoiceCode"/>
+          <field name="MerchantId"/>
+		  <field name="CategoryId"/>
+		  <field name="MerchantInvoiceReference"/>
 		  
-		  <field name="IsActive"/>
+		  <field name="Amount"/>
+		  <field name="CreatedBy"/>
+		  <field name="MerchantDeviceId"/>
 		  <field name="CreatedDate"/>
-		  
+		  <field name="ExpiryDate"/>
+		  <field name="CustomerId"/>
+		  <field name="Description"/>
+		  <field name="StatusId"/>
+		  <field name="CreatedDateStamp"/>
         </tree>
       </field>
     </record>
     
-	<record id="customer_device_form" model="ir.ui.view">
-		<field name="name">CustomerDevice form</field>
-		<field name="model">payment_my.customer_device</field>
+	<record id="invoice_form" model="ir.ui.view">
+		<field name="name">Invoice form</field>
+		<field name="model">payment_my.invoice</field>
 		<field name="arch" type="xml">
 		<form>
 			<sheet>
 				<group col="2" string="Details">
 					<group>
-          <field name="Id"/>
-          <field name="CustomerId"/>
-          <field name="DeviceId"/>
-		  <field name="MobileNumber"/>
-		  <field name="PaymentTypeId"/>
-		  <field name="device_id"/>
-		  <field name="payment_id"/>
-		  <field name="IsActive"/>
-		  <field name="CreatedDate"/>
-		  
+						<field name="Id"/>
+						<field name="InvoiceCode"/>
+						<field name="MerchantId"/>
+						<field name="CategoryId"/>
+						<field name="MerchantInvoiceReference"/>
+						<field name="Amount"/>
+						<field name="category_id"/>
+		  			</group>
+					<group>
+						<field name="CreatedBy"/>
+						<field name="MerchantDeviceId"/>
+						<field name="CreatedDate"/>
+						<field name="ExpiryDate"/>
+						<field name="CustomerId"/>
+						<field name="Description"/>
+						<field name="StatusId"/>
+						<field name="CreatedDateStamp"/>
 					</group>
 				</group>
 			</sheet>
@@ -46,12 +59,12 @@
 	</record>
     <!-- actions opening views on models -->
     
-    <record model="ir.actions.act_window" id="payment_my.customer_device_window">
-      <field name="name">customer_device window</field>
-      <field name="res_model">payment_my.customer_device</field>
+    <record model="ir.actions.act_window" id="payment_my.invoice_window">
+      <field name="name">Invoice window</field>
+      <field name="res_model">payment_my.invoice</field>
 	  <field name="view_ids" eval="[(5, 0, 0), 
-        (0, 0, {'view_mode': 'tree', 'view_id': ref('customer_device_list')}),
-		(0, 0, {'view_mode': 'form', 'view_id': ref('customer_device_form')})
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('invoice_list')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('invoice_form')})
 		]"/>
       <field name="view_mode">tree,form</field>
     </record>

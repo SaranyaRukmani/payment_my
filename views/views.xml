@@ -113,6 +113,22 @@
 			  
 	<menuitem name="Device" id="device_list" parent="menu_payment_header"
               action="payment_my.device_window"/>
+			  
+	<menuitem name="DevicePaymentType" id="device_payment_type_list" parent="menu_payment_header"
+              action="payment_my.device_payment_type_window"/>
+			  
+	<menuitem name="DevicePlatform" id="device_platform_list" parent="menu_payment_header"
+              action="payment_my.device_platform_window"/>
+			  
+	<menuitem name="EventType" id="even_type_list" parent="menu_payment_header"
+              action="payment_my.even_type_window"/>
+			  
+	<menuitem name="InvoiceStatus" id="invoice_status_list" parent="menu_payment_header"
+              action="payment_my.invoice_status_window"/>
+			  
+	<menuitem name="Invoice" id="invoice_list" parent="menu_payment_header"
+              action="payment_my.invoice_window"/>
+			  
 
     <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
               action="payment_my.action_server"/>

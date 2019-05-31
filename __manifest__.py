@@ -41,9 +41,11 @@
 
 		'views/customereventtransaction.xml',
 		'views/device_view.xml',
-
-
-
+		'views/device_payment_type_view.xml',
+		'views/device_platform_view.xml',
+		'views/even_type_view.xml',
+		'views/invoice_view.xml',
+		'views/invoice_status_view.xml',
 
         'views/views.xml',
         'views/templates.xml',

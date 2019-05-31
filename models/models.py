@@ -80,6 +80,8 @@ class Category(models.Model):
 	id = fields.Integer()
 	code = fields.Integer()
 	description = fields.Char()
+	
+	invoice_ids=fields.One2many('payment_my.invoice', 'category_id', string="Invoice")
 
 class Customer(models.Model):
 	_inherit = 'res.partner' 
@@ -125,6 +127,7 @@ class CustomerDevice(models.Model):
 	IsActive = fields.Boolean(string="Active",default=True)
 	CreatedDate = fields.Date(String="Date")
 #	customer_id=one2many(customer_device)
+
 #	device=one2many(customer_device)
 #	paymentid=one2many(customer_device)
 class CustomerEventTransaction(models.Model):
@@ -138,6 +141,11 @@ class CustomerEventTransaction(models.Model):
 	note = fields.Char()
 	description = fields.Char()
 	createddatestamp = fields.Date()
+
+	device_id=fields.Many2one('payment_my.device', string="Device")
+	payment_id=fields.Many2one('payment_my.device_payment_type', string="DevicePaymentType")
+
+
 class Device(models.Model):
 	_name = 'payment_my.device'
 
@@ -152,6 +160,56 @@ class Device(models.Model):
 	ApiKey = fields.Integer()
 	ApiSecret = fields.Integer()
 	CreatedDate = fields.Date(String="Date")
-	HashCode = fields.Date(String="Date")
+	HashCode = fields.Integer()
+	
+	customer_device_ids = fields.One2many('payment_my.customer_device', 'device_id', string="customer_device")
+	
+class DevicePaymentType(models.Model):
+	_name = 'payment_my.device_payment_type'
 
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Description = fields.Char()
+	device_payment_type_ids = fields.One2many('payment_my.customer_device', 'payment_id', string="customer_device")
+	
+class DevicePlatform(models.Model):
+	_name = 'payment_my.device_platform'
 
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Description = fields.Char()
+	
+class EventType(models.Model):
+	_name = 'payment_my.even_type'
+
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Description = fields.Char()
+	
+	
+class Invoice(models.Model):
+	_name = 'payment_my.invoice'
+
+	Id = fields.Integer()
+	InvoiceCode = fields.Integer()
+	MerchantId = fields.Integer()
+	CategoryId= fields.Integer()
+	MerchantInvoiceReference = fields.Char()
+	Amount = fields.Integer()
+	CreatedBy = fields.Char()
+	MerchantDeviceId = fields.Integer()
+	CreatedDate = fields.Date(String="Date")
+	ExpiryDate = fields.Date(String="Date")
+	CustomerId = fields.Integer()
+	Description = fields.Char()
+	StatusId = fields.Integer()
+	CreatedDateStamp = fields.Date(String="Date")
+	
+	category_id=fields.Many2one('payment_my.category', string="Category")
+
+class InvoiceStatus(models.Model):
+	_name = 'payment_my.invoice_status'
+
+	Id = fields.Integer()
+	Code = fields.Integer()
+	Description = fields.Char()
