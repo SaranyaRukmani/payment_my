@@ -1,0 +1,98 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="merchant_even_transaction_list">
+      <field name="name">MerchantEventTransaction list</field>
+      <field name="model">payment_my.merchant_even_transaction</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Id"/>
+          <field name="MerchantId"/>
+          <field name="CreatedDate"/>
+		  <field name="EventTypeId"/>
+		  <field name="PaymentTypeId"/>
+		  
+		  <field name="IsActive"/>
+		  <field name="CreatedDate"/>
+		  
+        </tree>
+      </field>
+    </record>
+    
+	<record id="merchant_even_transaction_form" model="ir.ui.view">
+		<field name="name">MerchantEventTransaction form</field>
+		<field name="model">payment_my.merchant_even_transaction</field>
+		<field name="arch" type="xml">
+		<form>
+			<sheet>
+				<group col="2" string="Details">
+					<group>
+          <field name="Id"/>
+          <field name="MerchantId"/>
+          <field name="CreatedDate"/>
+		  <field name="EventTypeId"/>
+		  <field name="PaymentTypeId"/>
+ 
+					</group>
+					<group>
+					<field name="device_id"/>
+		            <field name="payment_id"/>
+		            <field name="IsActive"/>
+		            <field name="CreatedDate"/>
+					</group>
+				</group>
+			</sheet>
+		</form>
+		</field>
+	</record>
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="payment_my.merchant_even_transaction_window">
+      <field name="name">MerchantEventTransaction window</field>
+      <field name="res_model">payment_my.merchant_even_transaction</field>
+	  <field name="view_ids" eval="[(5, 0, 0), 
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('merchant_even_transaction_list')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('merchant_even_transaction_form')})
+		]"/>
+      <field name="view_mode">tree,form</field>
+    </record>
+	
+	
+	
+	
+	
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="payment_my.action_server">
+      <field name="name">Payment_my server</field>
+      <field name="model_id" ref="model_payment_my_payment_my"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="Payment_my" id="payment_my.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Payment" id="payment_my.menu_1" parent="payment_my.menu_root"/>
+    <menuitem name="Menu 2" id="payment_my.menu_2" parent="payment_my.menu_root"/>
+    -->
+    <!-- actions -->
+    
+    
+    <!--<menuitem name="Server to list" id="payment_my" parent="payment_my.menu_2"
+              action="payment_my.action_server"/>-->
+    
+  </data>
+</odoo>

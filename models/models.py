@@ -197,3 +197,18 @@ class InvoiceStatus(models.Model):
 	Id = fields.Integer()
 	Code = fields.Integer()
 	Description = fields.Char()
+	
+	
+class MerchantEventTransaction(models.Model):
+	_name = 'payment_my.merchant_even_transaction'
+
+	Id = fields.Integer()
+	MerchantId = fields.Integer()
+	EventTypeId = fields.Integer()
+	UserId= fields.Integer()
+	Note = fields.Char()
+	MerchantDeviceId = fields.Integer()
+	Description = fields.Char()
+	CreatedDate = fields.Date(String="Date")
+	CreatedDateStamp = fields.Date(String="Date")
+
