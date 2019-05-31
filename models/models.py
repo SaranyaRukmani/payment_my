@@ -127,8 +127,24 @@ class CustomerDevice(models.Model):
 	IsActive = fields.Boolean(string="Active",default=True)
 	CreatedDate = fields.Date(String="Date")
 #	customer_id=one2many(customer_device)
+
+#	device=one2many(customer_device)
+#	paymentid=one2many(customer_device)
+class CustomerEventTransaction(models.Model):
+	_name = 'payment_my.customereventtransaction'
+	id = fields.Integer()
+	customerid = fields.Integer()
+	createddate = fields.Date()
+	eventtypeid = fields.Integer()
+	userid = fields.Char()
+	customerdeviceid = fields.Integer()
+	note = fields.Char()
+	description = fields.Char()
+	createddatestamp = fields.Date()
+
 	device_id=fields.Many2one('payment_my.device', string="Device")
 	payment_id=fields.Many2one('payment_my.device_payment_type', string="DevicePaymentType")
+
 
 class Device(models.Model):
 	_name = 'payment_my.device'

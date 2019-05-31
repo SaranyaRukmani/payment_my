@@ -108,6 +108,8 @@
 			  
 	<menuitem name="customer_device" id="customer_device_list" parent="menu_payment_header"
               action="payment_my.customer_device_window"/>
+	<menuitem name="customereventtransaction" id="customereventtransaction_list" parent="menu_payment_header"
+              action="payment_my.customereventtransaction_window"/>
 			  
 	<menuitem name="Device" id="device_list" parent="menu_payment_header"
               action="payment_my.device_window"/>
