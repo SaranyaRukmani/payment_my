@@ -39,7 +39,7 @@
 
 		'views/cardtype.xml',
 
-
+		'views/customereventtransaction.xml',
 		'views/device_view.xml',
 
 

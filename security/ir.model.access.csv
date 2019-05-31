@@ -15,3 +15,4 @@ access_payment_my_customer_device,payment_my.customer_device,model_payment_my_cu
 access_payment_my_cardtype,payment_my.cardtype,model_payment_my_cardtype,base.group_partner_manager,1,1,1,0
 ,,,,,,,
 access_payment_my_device,payment_my.device,model_payment_my_device,base.group_partner_manager,1,1,1,0
+access_payment_my_customerevnttransaction,payment_my.customereventtransaction,model_payment_my_customereventtransaction,base.group_partner_manager,1,1,1,0

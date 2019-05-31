@@ -1,0 +1,56 @@
+<odoo>
+  <data>
+	<record model="ir.ui.view" id="customereventtransaction_list">
+      <field name="name">customereventtransaction list</field>
+      <field name="model">payment_my.customereventtransaction</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="customerid"/>
+          <field name="createddate"/>
+		  <field name="eventtypeid"/>
+		  <field name="userid"/>
+		  <field name="customerdeviceid"/>
+		  <field name="note"/>
+		  <field name="description"/>
+		  <field name="createddatestamp"/>
+        </tree>
+      </field>
+    </record>
+    
+	<record id="customereventtransaction_form" model="ir.ui.view">
+		<field name="name">customereventtransaction.form</field>
+		<field name="model">payment_my.customereventtransaction</field>
+		<field name="arch" type="xml">
+		<form>
+			<sheet>
+				<group col="2" string="Details">
+					<group>
+						<field name="id"/>
+						<field name="customerid"/>
+						<field name="createddate"/>
+						<field name="eventtypeid"/>
+						<field name="userid"/>
+						<field name="customerdeviceid"/>
+						<field name="note"/>
+						<field name="description"/>
+						<field name="createddatestamp"/>
+					</group>
+				</group>
+			</sheet>
+		</form>
+		</field>
+	</record>
+    <!-- actions opening views on models -->
+    
+	<record model="ir.actions.act_window" id="payment_my.customereventtransaction_window">
+      <field name="name">customereventtransaction window</field>
+      <field name="res_model">payment_my.customereventtransaction</field>
+	  <field name="view_ids" eval="[(5, 0, 0), 
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('customereventtransaction_list')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('customereventtransaction_form')})
+		]"/>
+      <field name="view_mode">tree,form</field>
+	</record>
+  </data>
+</odoo>
